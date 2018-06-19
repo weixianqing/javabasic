@@ -44,6 +44,7 @@ public class StringCombiner
         return stringBuilder.length() == 0;
     }
 
+    @Override
     public String toString()
     {
         if (areAtStart())

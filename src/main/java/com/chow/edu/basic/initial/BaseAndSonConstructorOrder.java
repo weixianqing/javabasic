@@ -11,11 +11,13 @@ public class BaseAndSonConstructorOrder extends Base
         printName();
     }
 
+    @Override
     public void tellName()
     {
         System.out.println("Dervied tell name: " + name);
     }
 
+    @Override
     public void printName()
     {
         System.out.println("Dervied print name: " + name);

@@ -1,10 +1,13 @@
 package com.chow.edu.basic.lambdas;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 /**
- * Created by shelvin on 6/10/16 at 01:22.
+ *
+ * @author shelvin
+ * @date 6/10/16 at 01:22
  */
 
 public class Artist
@@ -61,5 +64,29 @@ public class Artist
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o)
+        {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass())
+        {
+            return false;
+        }
+        Artist artist = (Artist) o;
+        return age == artist.age &&
+                Objects.equals(name, artist.name) &&
+                Objects.equals(place, artist.place) &&
+                Objects.equals(members, artist.members);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(name, age, place, members);
     }
 }
